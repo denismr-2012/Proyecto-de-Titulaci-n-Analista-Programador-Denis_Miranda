@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movimiento de Existencias</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Encabezado -->
+  <header>
+    <h1>Movimiento de Existencias</h1>
+    <p>Auto-Stock</p>
+  </header>
+
+  <!-- Sección Login -->
+  <section id="login">
+    <h2>Iniciar Sesión</h2>
+    <form>
+      <label for="usuario">Usuario:</label>
+      <input type="text" id="usuario" name="usuario" required>
+      
+      <label for="clave">Contraseña:</label>
+      <input type="password" id="clave" name="clave" required>
+      
+      <button type="button" onclick="login()">Ingresar</button>
+    </form>
+  </section>
+
+  <!-- Sección Dashboard (oculta al inicio) -->
+  <section id="dashboard" style="display:none;">
+    <h2>Panel Principal</h2>
+    <nav>
+      <button onclick="mostrar('stock')">Stock</button>
+      <button onclick="mostrar('traslado')">Traslado</button>
+      <button onclick="mostrar('reportes')">Reportes</button>
+    </nav>
+
+    <div id="contenido">
+        <div id="stock">
+            
+  <h3>Gestión de Stock</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Código</th>
+        <th>Producto</th>
+        <th>Cantidad</th>
+        <th>Sucursal</th>
+      </tr>
+    </thead>
+    <tbody id="tablaStock">
+      <!-- Filas generadas por JavaScript -->
+    </tbody>
+  </table>
+  <button onclick="actualizarStock()">Actualizar Stock</button>
+</div>
+    </div>
+    
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
